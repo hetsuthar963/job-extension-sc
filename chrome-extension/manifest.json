@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "AI Web Content Analyzer",
+  "version": "1.0",
+  "description": "Capture web content and analyze it with AI for job hunting and business prospecting",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["http://localhost:3000/*", "https://your-domain.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Capture Page Content"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
